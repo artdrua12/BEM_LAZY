@@ -10,17 +10,18 @@
 
 <body>
     <div class="content content_margin">
-        <div class="video">
-            <div class="video__one">
+        <div class="media">
+            <div class="media__one">
                 <p>Digistion is &nbsp <span class="quentin"> the key </span> to overall<br>
                     wellnes in Body, Mind and Spirit</p>
-                
+
             </div>
-            <div class="video__two">
-                <img src="https://lazy-loading.firebaseapp.com/images/high-res/Image27.jpg" loading="lazy" alt="image2">
+            <div class="media__two">
+                <img src="https://lazy-loading.firebaseapp.com/images/high-res/Image27.jpg" loading="lazy"
+                    alt="imageTWO">
             </div>
         </div>
-        <div class="image">
+        <div class="imageBlock">
             <img src="./image/spice.jpg" loading="lazy" alt="image3">
         </div>
     </div>
@@ -48,22 +49,24 @@
         font-family: 'Quentin';
     }
 
-    .content {
+    body {
         font-family: 'TiemposFine';
+    }
+
+    .content {
         display: grid;
         margin: auto;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        grid-template-rows: auto auto;
+        grid-template-rows: auto 1fr;
         grid-gap: 4vw 2vw;
         justify-items: center;
     }
 
     .content_margin {
-        position: relative;
-        margin: auto;
+        margin: 5vw 0 0 0;
     }
 
-    .video {
+    .media {
         width: 92%;
         display: flex;
         flex-direction: column;
@@ -72,7 +75,7 @@
         font-size: 18px;
     }
 
-    .video__one {
+    .media__one {
         width: 85%;
         margin-bottom: 4vw;
         height: 18vw;
@@ -85,14 +88,14 @@
         justify-content: center;
     }
 
-    .video__two {
+    .media__two {
         width: 100%;
         height: 18vw;
         background-image: url('./image/fill.svg');
         background-size: auto;
     }
 
-    .image {
+    .imageBlock {
         width: 92%;
         height: 80%;
     }
@@ -102,5 +105,4 @@
         height: 100%;
         object-fit: cover;
     }
-
-    </style>
+</style>
