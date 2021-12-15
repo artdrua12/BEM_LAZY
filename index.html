@@ -5,20 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HTML CSS</title>
 </head>
 
 <body>
     <div class="content content_margin">
         <div class="video">
-            <div class="video__one"><img src="https://lazy-loading.firebaseapp.com/images/high-res/Image198.jpg"
-                    loading="lazy" alt="image1"></div>
+            <div class="video__one">
+                <p>Digistion is &nbsp <span class="quentin"> the key </span> to overall<br>
+                    wellnes in Body, Mind and Spirit</p>
+                
+            </div>
             <div class="video__two">
                 <img src="https://lazy-loading.firebaseapp.com/images/high-res/Image27.jpg" loading="lazy" alt="image2">
             </div>
         </div>
         <div class="image">
-            <img src="https://lazy-loading.firebaseapp.com/images/high-res/Image40.jpg" loading="lazy" alt="image3">
+            <img src="./image/spice.jpg" loading="lazy" alt="image3">
         </div>
     </div>
 
@@ -27,13 +30,26 @@
 </html>
 
 <style>
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    @font-face {
+        font-family: 'Quentin';
+        src: url('fonts/Quentin.otf');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'TiemposFine';
+        src: url('fonts/TiemposFine-Bold.otf');
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    .quentin {
+        font-family: 'Quentin';
     }
 
     .content {
+        font-family: 'TiemposFine';
         display: grid;
         margin: auto;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -52,25 +68,39 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        font-size: 18px;
     }
 
     .video__one {
         width: 85%;
         margin-bottom: 4vw;
         height: 18vw;
-        background-color: rgb(233, 229, 13);
+        background-image: url('./image/spice.jpg');
+        background-size: cover;
+        color: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .video__two {
         width: 100%;
         height: 18vw;
-        background-color: rgb(42, 140, 165);
+        background-image: url('./image/fill.svg');
+        background-size: auto;
     }
 
     .image {
         width: 92%;
         height: 80%;
-        background-color: brown;
-        margin-bottom: 100px;
     }
-</style>
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    </style>
