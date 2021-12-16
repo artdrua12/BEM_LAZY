@@ -15,53 +15,78 @@
 .quentin {
   font-family: "Quentin";
 }
-
-.content {
-  font-family: "TiemposFine";
-  display: grid;
-  margin: auto;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-template-rows: auto auto;
-  grid-gap: 4vw 2vw;
-  justify-items: center;
-}
-
 .content_margin {
-  position: relative;
-  margin: auto;
+  margin: 2vw;
 }
-
-.video {
-  width: 92%;
+.content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  font-size: 18px;
+  justify-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: "TiemposFine";
+}
+.content__media {
+  margin: 2vw;
+  font-size: 20px;
 }
 
-.video__one {
-  width: 85%;
-  margin-bottom: 4vw;
-  height: 18vw;
+.media {
+  flex: 500px 1 1;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.media__title::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: yellow;
+  margin: 5px 38%;
+}
+
+.media__title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 24px;
+  margin: 20px auto 0 auto;
+  background-image: url("./image/fill.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.media__one_margin{
+  margin: 0 4vw 4vw 4vw;
+}
+.media__one {
+  flex-basis: 100%;
+  height: 20vw;
   background-image: url("./image/spice.jpg");
   background-size: cover;
   color: white;
 
   display: flex;
-  align-items: center;
+  justify-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.video__two {
-  width: 100%;
-  height: 18vw;
+.media__two {
+  flex-basis: 100%;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 23vw;
 }
 
-.image {
-  width: 92%;
-  height: 80%;
-  margin-bottom: 100px;
+.content__image {
+  flex: 500px 1 1;
+  height: 33vw;
+  margin: 2vw;
 }
 
 img {
@@ -69,3 +94,4 @@ img {
   height: 100%;
   object-fit: cover;
 }
+

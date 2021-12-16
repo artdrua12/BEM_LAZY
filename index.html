@@ -6,21 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML CSS</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-    <div class="content flex margin">
-        <div class="content__media  media margin ">
-            <div class="media__one flex margin">
+    <div class="content content_margin">
+        <div class="content__media  media ">
+            <div class="media__one media__one_margin">
                 <p class="media__title">Digistion is &nbsp <span class="quentin"> the key </span> to overall<br>
                     wellnes in Body, Mind and Spirit</p>
-
             </div>
             <div class="media__two">
                 <img src="./image/background.jpg" loading="lazy" alt="imageTWO">
             </div>
         </div>
-        <div class="content__image margin">
+        <div class="content__image">
             <img src="./image/spice.jpg" loading="lazy" alt="image3">
         </div>
     </div>
@@ -31,104 +31,5 @@
 
 
 <style>
-   @font-face {
-  font-family: 'Quentin';
-  src: url('fonts/Quentin.otf');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'TiemposFine';
-  src: url('fonts/TiemposFine-Bold.otf');
-  font-weight: bold;
-  font-style: normal;
-}
-
-.quentin {
-  font-family: 'Quentin';
-}
-
-.content {
-  display: flex;
-  justify-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  font-family: 'TiemposFine';
-}
-
-.content_margin {
-  margin: 2vw;
-}
-
-content__media {
-  margin: 2vw;
-}
-
-.media {
-  flex: 450px 1 1;
-  font-size: 20px;
-
-  display: flex;
-  justify-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-margin {
-  margin: 2vw;
-}
-
-.media__title::before {
-  content: '';
-  display: block;
-  width: 50px;
-  height: 3px;
-  background-color: yellow;
-
-  margin: 5px 38%;
-}
-
-.media__title::after {
-  content: '';
-  display: block;
-  width: 50px;
-  height: 24px;
-  margin: auto;
-  margin-top: 20px;
-  background-image: url("./image/fill.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.media__one {
-  flex-basis: 100%;
-  height: 20vw;
-  background-image: url('./image/spice.jpg');
-  background-size: cover;
-  color: white;
-  margin: 0 4vw 4vw 4vw;
-
-  display: flex;
-  justify-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center
-}
-
-.media__two {
-  flex-basis: 100%;
-  height: 23vw;
-}
-
-.content__image {
-  flex: 450px 1 1;
-  height: 33vw
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+   
 </style>
