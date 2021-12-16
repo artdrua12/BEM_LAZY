@@ -27,7 +27,6 @@
 }
 .content__media {
   margin: 2vw;
-  font-size: 20px;
 }
 
 .media {
@@ -66,6 +65,8 @@
   background-image: url("./image/spice.jpg");
   background-size: cover;
   color: white;
+  font-size: 25px;
+  overflow: hidden;
 
   display: flex;
   justify-items: center;
