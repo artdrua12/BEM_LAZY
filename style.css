@@ -30,7 +30,7 @@
 }
 
 .media {
-  flex: 500px 1 1;
+  flex: 450px 1 1;
   display: flex;
   justify-items: center;
   justify-content: center;
@@ -65,7 +65,7 @@
   background-image: url("./image/spice.jpg");
   background-size: cover;
   color: white;
-  font-size: 25px;
+  font-size: 20px;
   overflow: hidden;
 
   display: flex;
@@ -85,7 +85,7 @@
 }
 
 .content__image {
-  flex: 500px 1 1;
+  flex: 450px 1 1;
   height: 33vw;
   margin: 2vw;
 }
