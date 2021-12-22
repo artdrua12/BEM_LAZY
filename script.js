@@ -1,9 +1,7 @@
-let video
+let video = null;
 class Video {
     constructor(url) {
         this.popap = document.querySelector('.popap');
-        this.popap.classList.add('popap_open');
-
         this.player = this.init();
         this.focusableElementsCollections = document.querySelectorAll('.popap__control');
         this.focusableElements = Array.prototype.slice.call(this.focusableElementsCollections);
@@ -13,7 +11,6 @@ class Video {
         document.addEventListener('keydown', (e) => this.pressKey(e));
         this.addListener();
     }
-
     init() {
         return new YT.Player('player', {
             width: '720',
@@ -23,39 +20,31 @@ class Video {
                 autoplay: 1,
                 showinfo: 0,
                 modestbranding: 0,
-                controls: 0,
-                rel: 0
+                controls: 0
             }
         })
     }
     addListener() {
-        this.focusableElementsCollections[0].addEventListener('click', () => {
-            this.player.playVideo();
-        })
-        this.focusableElementsCollections[1].addEventListener('click', () => {
-            this.player.stopVideo();
-        })
-        this.focusableElementsCollections[2].addEventListener('click', () => {
-            this.player.pauseVideo();
-        })
-        this.focusableElementsCollections[3].addEventListener('change', (event) => {
+        this.focusableElements[0].addEventListener('click', () => this.play())
+        this.focusableElements[1].addEventListener('click', () => this.stop())
+        this.focusableElements[2].addEventListener('click', () => this.pause())
+        this.focusableElements[3].addEventListener('change', (event) => {
             this.player.setVolume(event.target.value);
         })
-        this.focusableElementsCollections[4].addEventListener('change', (event) => {
-            console.log('event.target.value', event.target.value);
-            let objSize = event.target.value.split(" ");
-            this.player.setSize(objSize[0], objSize[1]);
+        this.focusableElements[4].addEventListener('change', (event) => {
+            let arraySize = event?.target?.value?.split(" ") || [720, 480];
+            this.player.setSize(arraySize[0], arraySize[1]);
         })
-        this.focusableElementsCollections[5].addEventListener('click', () => {
-            this.player.pauseVideo();
-            this.popap.classList.remove('popap_open');
+        this.focusableElements[5].addEventListener('click', () => {
+            this.pause();
+            this.close();
         })
     }
     pressKey(e) {
         // ESCAPE
         if (e.code === 'Escape') {
-            this.player.pauseVideo();
-            this.popap.classList.remove('popap_open');
+            this.pause();
+            this.close();
         }
 
         if (e.code === 'Tab') {
@@ -65,7 +54,6 @@ class Video {
                     e.preventDefault();
                     this.lastTabStop.focus();
                 }
-
                 // TAB
             } else {
                 if (document.activeElement === this.lastTabStop) {
@@ -75,11 +63,31 @@ class Video {
             }
         }
     }
+    open() {
+        this.popap.classList.add('popap_open');
+    }
+    play() {
+        this.player.playVideo();
+    }
+    stop() {
+        this.player.stopVideo();
+    }
+    pause() {
+        this.player.pauseVideo();
+    }
+    close() {
+        this.popap.classList.remove('popap_open');
+    }
 }
 
 function play() {
-    video = new Video('play');
-    // document.location.href = "#popap";
+    if (video) {
+        video.open();
+        video.play();
+    } else {
+        video = new Video('play');
+        video.open();
+    }
 }
 
 
