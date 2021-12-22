@@ -41,12 +41,10 @@ class Video {
         })
     }
     pressKey(e) {
-        // ESCAPE
         if (e.code === 'Escape') {
             this.pause();
             this.close();
         }
-
         if (e.code === 'Tab') {
             // SHIFT + TAB
             if (e.shiftKey) {
