@@ -135,12 +135,12 @@ img {
   color: rgb(250, 248, 248);
   background-color: rgb(240, 9, 9);
 }
-.popap:target {
+.popap.popap_open {
   opacity: 1;
   visibility: visible;
 }
 
-.popap:target .popap__body {
+.popap.popap_open .popap__body {
   opacity: 1;
   transform: perspective(500px) translate(0, 0%) rotateX(0deg);
 }

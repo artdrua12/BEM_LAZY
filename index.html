@@ -13,33 +13,43 @@
 
 <body>
     <div class="content content_margin">
+        <div id="popap" class="popap">
+            <div class="popap__body ">
+                <div id="player"></div>
+                <div class="popap__controls">
+                    <button class="popap__control">Play</button>
+                    <button class="popap__control">Stop</button>
+                    <button class="popap__control">Pause</button>
+                    <select class="popap__control">
+                        <option value='0'>sound 0%</option>
+                        <option value='50'>sound 50%</option>
+                        <option value='100' selected>sound 100%</option>
+                    </select>
+                    <select class="popap__control">
+                        <option>480 360</option>
+                        <option selected>720 480</option>
+                        <option >1080 724</option>
+                        <option>1280 920</option>
+                    </select>
+                    <button class="popap__control">Close</button>
+                </div>
+            </div>
+        </div>
+
         <div class="content__media  media ">
             <div class="media__one media__one_margin">
                 <p class="media__title">Digistion is &nbsp <span class="quentin"> the key </span> to overall<br>
                     wellnes in Body, Mind and Spirit</p>
-                <a href='#popap' onclick="play()" class="media__text">
-                    <h3>Запустить видео</h3>
-                </a>
             </div>
-            <div class="media__two">
+            <div class="media__two" onclick="play()">
                 <img src="./image/background.jpg" loading="lazy" alt="image2">
             </div>
         </div>
         <div class="content__image">
             <img src="./image/spice.jpg" loading="lazy" alt="image3">
         </div>
-        <div id="popap" class="popap">
-            <div class="popap__body ">
-                <div id="player"></div>
-                <div class="popap__controls">
-                    <button class="popap__control popap__play">Play</button>
-                    <button class="popap__control popap__stop">Stop</button>
-                    <button class="popap__control popap__pause">Pause</button>
-                    <button class="popap__control popap__close"><a href="#">Close</a></button>
-                </div>
-            </div>
-        </div>
     </div>
+
 </body>
 
 </html>

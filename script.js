@@ -1,6 +1,9 @@
 let video
 class Video {
     constructor(url) {
+        this.popap = document.querySelector('.popap');
+        this.popap.classList.add('popap_open');
+
         this.player = this.init();
         this.focusableElementsCollections = document.querySelectorAll('.popap__control');
         this.focusableElements = Array.prototype.slice.call(this.focusableElementsCollections);
@@ -20,27 +23,39 @@ class Video {
                 autoplay: 1,
                 showinfo: 0,
                 modestbranding: 0,
-                controls: 0
+                controls: 0,
+                rel: 0
             }
         })
     }
-    addListener(){
-        this.focusableElementsCollections[0].addEventListener('click',()=>{
-           this.player.playVideo();
+    addListener() {
+        this.focusableElementsCollections[0].addEventListener('click', () => {
+            this.player.playVideo();
         })
-        this.focusableElementsCollections[1].addEventListener('click',()=>{
+        this.focusableElementsCollections[1].addEventListener('click', () => {
             this.player.stopVideo();
-         })
-         this.focusableElementsCollections[2].addEventListener('click',()=>{
+        })
+        this.focusableElementsCollections[2].addEventListener('click', () => {
             this.player.pauseVideo();
-         })
+        })
+        this.focusableElementsCollections[3].addEventListener('change', (event) => {
+            this.player.setVolume(event.target.value);
+        })
+        this.focusableElementsCollections[4].addEventListener('change', (event) => {
+            console.log('event.target.value', event.target.value);
+            let objSize = event.target.value.split(" ");
+            this.player.setSize(objSize[0], objSize[1]);
+        })
+        this.focusableElementsCollections[5].addEventListener('click', () => {
+            this.player.pauseVideo();
+            this.popap.classList.remove('popap_open');
+        })
     }
-
     pressKey(e) {
         // ESCAPE
         if (e.code === 'Escape') {
             this.player.pauseVideo();
-            document.location.href = "#";
+            this.popap.classList.remove('popap_open');
         }
 
         if (e.code === 'Tab') {
@@ -60,16 +75,11 @@ class Video {
             }
         }
     }
-
-    pause() {
-        this.player.pauseVideo();
-    }
 }
 
 function play() {
     video = new Video('play');
+    // document.location.href = "#popap";
 }
-function pause() {
-    video.pause();
-}
+
 
