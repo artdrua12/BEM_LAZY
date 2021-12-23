@@ -8,12 +8,27 @@
     <title>HTML CSS</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./popap.css">
-    <script src="./script.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="./popap.js"></script>
 </head>
 
 <body>
-    <div id="popap" class="popap">
+    <div class="content content_margin">
+        <div class="content__media  media ">
+            <div class="media__one media__one_margin" onclick="play()">
+                <p class="media__title">Digistion is &nbsp <span class="fontQuentin"> the key </span> to overall<br>
+                    wellnes in Body, Mind and Spirit</p>
+            </div>
+            <div class="media__two" onclick="play()">
+                <img class="media__img" src="./image/background.jpg" loading="lazy" alt="image">
+            </div>
+        </div>
+        <div class="content__image content__image_height" onclick="play()">
+            <img class="media__img" src="./image/spice.jpg" loading="lazy" alt="image">
+        </div>
+    </div>
+    <!-- так выглядит сгенерированый попап -->
+    <!-- <div class="popap">
         <div class="popap__body ">
             <div id="player"></div>
             <div class="popap__controls">
@@ -27,34 +42,14 @@
                 </select>
                 <select class="popap__control">
                     <option>480 360</option>
-                    <option selected>720 480</option>
-                    <option >1080 724</option>
-                    <option>1280 920</option>
+                    <option selected>740 480</option>
+                    <option>920 560</option>
+                    <option>1080 724</option>
                 </select>
                 <button class="popap__control">Close</button>
             </div>
         </div>
-    </div>
-    <div class="content content_margin">
-        <div class="content__media  media ">
-            <div class="media__one media__one_margin" onclick="play()">
-                <p class="media__title">Digistion is &nbsp <span class="quentin"> the key </span> to overall<br>
-                    wellnes in Body, Mind and Spirit</p>
-            </div>
-            <div class="media__two" onclick="play()">
-                <img src="./image/background.jpg" loading="lazy" alt="image">
-            </div>
-        </div>
-        <div class="content__image">
-            <img src="./image/spice.jpg" loading="lazy" alt="image">
-        </div>
-    </div>
-
+    </div> -->
 </body>
 
 </html>
-
-
-<style>
-
-</style>
