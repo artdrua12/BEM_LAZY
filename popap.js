@@ -140,15 +140,8 @@ class Video {
 }
 
 function play() {
-    if (video) {
-        console.log('play video', video);
-        video.open();
-        video.play();
-    } else {
-        console.log('play NO video', video);
-        video = new Video('play');
-        video.open();
-    }
+    video = new Video('play');
+    video.open();
 }
 
 
